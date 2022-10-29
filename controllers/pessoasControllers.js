@@ -13,7 +13,17 @@ const path = require('path')
     }
 
     static sobre(req,res){
-        res.render('sobre')
+
+        let usuario = {
+            nome: "Carlos",
+            idade: '23'
+        }
+
+
+        res.render('sobre',{
+            nomequevouacessar:usuario
+        })
+
     }
 
     static store(req,res){
@@ -24,7 +34,7 @@ const path = require('path')
     pessoas.push(pessoa)
     console.log(pessoas)
 
-        res.redirect('/')
+        res.render('/index')
 
   }
 }
